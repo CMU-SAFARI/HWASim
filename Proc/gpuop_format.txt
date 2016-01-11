@@ -1,0 +1,11 @@
+
+Trace : CTA / Warp Base
+
+Name_CTAx_CTAy_CTAz_WIDx_WIDy_WIDz
+
+1. The number of CTA per each shader is set by configuration (or written in trace header?). -> this parameter is got from gpgpu-sim
+2. If a CTA is finished, next CTA selected sequentially (from GPGPU sim execution) : This order can be changed.
+3. Warp scheduler selects target warp to issue its requests : (How many warps in each cta? -> This parameter should be got from gpgpu-sim result)
+4. Each instructions executed by WARP, active flags is required to count real ipc
+5. How many instructions between a Load instruction and the dependent instruction against the Load? -> written in the trace (done)
+

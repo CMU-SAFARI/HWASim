@@ -1,0 +1,84 @@
+network_nrX = 4
+network_nrY = 1
+coherent_cache_size = 15
+coherent_cache_assoc = 2
+NumberOfNodeHavingShCache = 8
+sh_cache_size = 19
+sh_cache_assoc = 4
+sh_cache_perfect = false
+cache_block = 6
+idealnet = true 
+router.linkLatency = 3
+edge_loop = false 
+router.dataPacketSize = 8
+router.maxPacketSize = 8
+
+finish = cycle 200000000
+trace_wraparound = true
+
+mshrs = 16
+shcache_buf = 16
+
+// DRAM Parameters
+memory.DRAMRowSize = 2048 // Page Size = 2KB
+memory.numMemControllers = 2
+memory.numChannels = 1
+memory.numRanks = 1
+memory.numBanks = 8
+
+memory.busWidth = 8
+memory.busRatio = 4 // (666MHz)
+
+memory.cRAS = 96 // 24*4
+memory.cCAS = 36 // 9*4
+memory.cWR = 40 // 15ns = 10CK*4 
+memory.cDQS = 28 // 7CK
+memory.cWTR = 20 // 4CK or 7.5ns(5*4)
+memory.cRCD = 36 // 9*4
+memory.cRP = 36 // 9*4
+memory.cRTP = 20 // 4CK or 7.5ns(5*4)
+memory.cRC = 132 // 33*4
+memory.cRRD = 20 // 5*4 (7.5ns)
+
+// DCT Memory controller parameters
+memory.schedBufSize = 300
+memory.reservedCoreEntries = 150
+memory.reservedGPUEntries = 0
+memory.RDBSize = 64
+memory.WDBSize = 64
+memory.reservedHWAEntries = 150
+
+memory.coreUrgentThreshold = 512
+memory.GPUUrgentThreshold = 2048
+
+is_memQueue_priority_scheme = true 
+sched.hwa_str_priority = true
+sched.hwa_priority_per_bank = true
+sched.qosEpoch = 500
+sched.QoSPolicy = CLUSTER
+sched.qosWorstCaseStrict = true
+sched.is_used_prior_for_sdl_cluster = false
+sched.ratio_allocated_sdl_cluster = 1.00
+sched.is_always_llclst_accelerated = false
+sched.is_clustering_auto_adjust = false
+sched.accelerate_probability_int = 0
+sched.accelerate_probability_nonint = 100 
+sched.accelerate_probability_int_min = 0 
+sched.is_clustering_and_probability = false 
+sched.is_clustering_and_probability_dual = false 
+sched.is_clustering_th_and_prob = false 
+sched.quantum_cycles_for_probability = 2500 
+sched.quantum_cycles_for_suspend = 1000000 
+sched.threshold_bw_shortage = 5 
+sched.hwa_emergency_progress = 0.8 
+sched.hwa_emergency_progress_short = 0.8 
+sched.hwa_emergency_progress_long = 0.8 
+sched.hwa_frfcfs_deadline_same_priority = true 
+sched.is_sdllclst_used = true 
+
+hwaDeadLineList = 88888888,5447,63041,88888888
+hwaDeadLineReqCntList = 195840,16,3072,195840
+hwaStartOffsetList = 0,0,0,0
+HWANum = 4
+
+
